@@ -326,7 +326,8 @@ a {
 
 .header {
   padding: 60px 0 0 0;
-  overflow: hidden; }
+  overflow: hidden;
+  }
   .header__header {
     width: 100%;
     z-index: 2;
@@ -369,7 +370,7 @@ a {
     width: 100%;
     background-size: 100%;
     background-position: 0 -100px;
-    height: 1080px;
+    height: 1200px;
     position: relative; }
   .header__bg {
     position: absolute;
@@ -414,7 +415,7 @@ a {
     background: url("../images/Ellipse 58.png") no-repeat;
     background-size: 100%;
     left: -270px;
-    bottom: 190px; }
+    bottom: 300px; }
   .header__vector3 {
     position: absolute;
     z-index: 1;
@@ -424,7 +425,7 @@ a {
     background-size: 100%;
     background-position: 0 100%;
     left: -270px;
-    bottom: -90px; }
+    bottom: 20px; }
   .header__text {
     width: 45%;
     height: 100%;
@@ -442,7 +443,8 @@ a {
     width: 37%;
     padding: 0 190px 0 0;
     box-sizing: border-box;
-    position: relative; }
+    position: relative; 
+    height: 100%;}
   .header__options {
     margin: 0 0 45px 0; }
   .header__option {
@@ -467,6 +469,14 @@ a {
         border: 2px solid #E5E5E5;
         border-radius: 15px;
         top: 99%; }
+        .header__option .select-custom__option {
+          font-size: 14px;
+          line-height: 18px;
+        }
+        .header__option .select-custom__current {
+          font-size: 14px;
+          line-height: 18px;
+        }
   .header__button {
     margin: 0 0 35px 0; }
   .header__best-choise {
@@ -498,7 +508,7 @@ a {
   height: 100%; }
   .select-custom__current {
     font-size: 24px;
-    line-height: 29px;
+    line-height: 30px;
     color: #242424;
     display: flex;
     align-items: center;
@@ -508,7 +518,7 @@ a {
     width: 84%;
     display: flex;
     justify-content: center;
-    padding-left: 10px; }
+    padding-left: 20px; }
   .select-custom__arrow {
     width: 20px;
     height: 20px;
@@ -528,7 +538,7 @@ a {
     border-bottom-right-radius: 15px; }
   .select-custom__option {
     font-size: 24px;
-    line-height: 29px;
+    line-height: 30px;
     color: #242424;
     border-bottom: 1px solid #E5E5E5;
     padding: 10px;
@@ -1024,12 +1034,12 @@ a {
       background-size: 90%; }
     .header__vector2 {
       width: 750px;
-      bottom: 130px;
+      bottom: 220px;
       left: -210px;
       height: 200px; }
     .header__vector3 {
       width: 720px;
-      bottom: -70px;
+      bottom: 20px;
       left: -200px; }
     .header__contact-phone {
       margin: 210px auto 0 auto;
@@ -1103,12 +1113,12 @@ a {
   .header__text {
     padding-left: 100px; }
   .header__vector2 {
-    bottom: 150px;
+    bottom: 230px;
     width: 670px;
     left: -160px;
     height: 180px; }
   .header__vector3 {
-    bottom: -20px;
+    bottom: 50px;
     width: 680px;
     left: -160px; }
   .header__contact-phone {
@@ -1144,12 +1154,12 @@ a {
     font-size: 14px; } }
 @media screen and (max-width: 1200px) {
   .header__vector2 {
-    bottom: 150px;
+    bottom: 200px;
     width: 670px;
     left: -200px;
     height: 180px; }
   .header__vector3 {
-    bottom: -20px;
+    bottom: 30px;
     width: 680px;
     left: -200px; } }
 @media screen and (max-width: 1000px) {
