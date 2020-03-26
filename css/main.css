@@ -297,6 +297,10 @@ summary {
 template {
   display: none; }
 
+  *{
+    transition: all .2s ease;
+  }
+
 /**
  * Add the correct display in IE 10.
  */
@@ -325,13 +329,15 @@ a {
   color: white; }
 
 .header {
-  padding: 60px 0 0 0;
   overflow: hidden;
+  margin: 0 0 40px 0;
   }
   .header__header {
     width: 100%;
     z-index: 2;
-    position: relative; }
+    position: fixed;
+  padding: 20px 0 20px 0;
+background-color: white; }
   .header__container {
     width: 90%;
     margin: 0 auto;
@@ -368,9 +374,10 @@ a {
     line-height: 24px; }
   .header__main {
     width: 100%;
+    padding: 108px 0 0 0;
     background-size: 100%;
     background-position: 0 -100px;
-    height: 1200px;
+    height: 1000px;
     position: relative; }
   .header__bg {
     position: absolute;
@@ -382,7 +389,7 @@ a {
     position: relative;
     top: 0;
     left: 0;
-    max-height: 970px; }
+    height: 100%; }
   .header__bg2 {
     width: 100%;
     z-index: 0;
@@ -400,7 +407,6 @@ a {
     left: 0; }
   .header__vector1 {
     width: 100%;
-    background: url("../images/Vector.png") no-repeat;
     background-size: 100% 80%;
     height: 100%;
     display: flex;
@@ -439,19 +445,22 @@ a {
     line-height: 66px;
     margin: 350px auto 10px auto; }
   .header__content {
-    margin: 52px 0 0 0;
+    margin: 100px 0 0 0;
     width: 37%;
     padding: 0 190px 0 0;
     box-sizing: border-box;
     position: relative; 
     height: 100%;}
+    .header__content .content__header{
+      color: white;
+    }
   .header__options {
     margin: 0 0 45px 0; }
   .header__option {
     font-weight: 600;
     font-size: 24px;
     line-height: 29px;
-    color: #535353;
+    color: white;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -461,7 +470,8 @@ a {
       width: 60%;
       height: 75px;
       border: 3px solid #E5E5E5;
-      border-radius: 50px; }
+      border-radius: 50px;
+    background: white; }
       .header__option .select-custom__arrow {
         background: url("../images/arrowdowngrey.png") no-repeat;
         background-position: center; }
@@ -476,6 +486,7 @@ a {
         .header__option .select-custom__current {
           font-size: 14px;
           line-height: 18px;
+          padding-right: 15px;
         }
   .header__button {
     margin: 0 0 35px 0; }
@@ -483,7 +494,7 @@ a {
     font-family: montserrat-bold;
     font-size: 28px;
     line-height: 34px;
-    color: #242424; }
+    color: white; }
     .header__best-choise span {
       color: #01AE5F; }
   .header__callus {
@@ -572,7 +583,7 @@ a {
   font-family: montserrat-bold;
   font-size: 38px;
   line-height: 46px;
-  color: #242424;
+  color: #000000;
   margin: 0 0 40px 0; }
 
 .content__subtitle {
@@ -587,8 +598,6 @@ a {
     margin: 0 auto;
     display: flex;
     flex-direction: column; }
-  .services__header {
-    margin-top: 50px; }
   .services__subtitle {
     margin: 0 0 120px 0; }
   .services__row {
@@ -701,11 +710,64 @@ a {
   margin: 0 0 120px 0;
   box-sizing: border-box;
   background: url("../images/garbage.jpg") no-repeat;
-  background-position: 80% 0; }
+  background-size: cover;
+}
   .feedback__header {
     color: white; }
   .feedback__form {
-    display: flex; }
+    display: flex;
+  flex-wrap: wrap; }
+  .feedback__form-block{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    margin: 0 0 40px 0;
+  }
+
+  .feedback__checkbox{
+    color: #FFFFFF;
+    font-size: 20px;
+    display:flex;
+    align-items: center;
+    margin: 0 20px 0 0;
+    position: relative;
+  }
+  .feedback__checkbox input {
+    visibility: hidden;
+  }
+  .feedback__checkbox label{
+    cursor: pointer;
+  }
+
+    .feedback__checkbox .checkmark {
+      width: 20px;
+      height: 20px;
+      display:block;
+      border: 1px solid #FFFFFF;
+      border-radius: 50%;
+      position: absolute;
+      right: 100%;
+      cursor: pointer;
+    }
+
+    .feedback__checkbox .checkmark:after{
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: none;
+      background: url(../images/tick.png) no-repeat;
+      background-position: center;
+      background-size: 80%;
+    }
+
+  .feedback__checkbox input:checked ~ .checkmark{
+    background-color: white;
+  }
+
+  .feedback__checkbox input:checked~.checkmark:after {
+    display: block;
+  }
+
   .feedback__input {
     margin: 0 48px 0 0;
     width: 22%; }
@@ -957,6 +1019,21 @@ a {
   .item-footer__list ul li a {
     color: #01AE5F;
     text-decoration: underline; }
+    #change-theme1 a,
+    #change-theme2 a {
+      display:block;
+      text-align: center;
+      background-color: #01AE5F;
+      border: none;
+      border-radius: 40px;
+      padding: 10px 20px;
+      color: white;
+      outline: none;
+    }
+
+    #change-theme1 {
+          display: none;
+    }
 
 @media screen and (max-width: 1900px) {
   .header__text {
@@ -991,7 +1068,8 @@ a {
     padding: 0; }
     .header__main {
       background-position: 0 0;
-      height: 950px; }
+      height: 830px;
+    padding: 90px 0 0 0; }
     .header__header {
       padding: 20px 0; }
     .header__logo {
@@ -1013,7 +1091,6 @@ a {
       font-size: 42px;
       line-height: 51px; }
     .header__content {
-      margin: 50px 0 0 0;
       width: 32%;
       padding: 0 50px 0 0; }
     .header__option {
@@ -1101,10 +1178,7 @@ a {
   .services__header {
     margin-top: 0; } }
 @media screen and (max-width: 1400px) {
-  .header__header {
-    padding: 30px 0 0 0; }
   .header__vector1 {
-    background: url("../images/Vector1.png") no-repeat;
     background-size: 100% 80%;
     background-position: 100% 0; }
   .header__content {
@@ -1153,6 +1227,9 @@ a {
   .header__item .select-custom__selected, .header__item .select-custom__option {
     font-size: 14px; } }
 @media screen and (max-width: 1200px) {
+  .header__bg1{
+    width: auto;
+  }
   .header__vector2 {
     bottom: 200px;
     width: 670px;
@@ -1163,14 +1240,13 @@ a {
     width: 680px;
     left: -200px; } }
 @media screen and (max-width: 1000px) {
+  .feedback__form-block{
+    flex-direction: column;
+    align-items: center;
+  }
   .header {
     position: relative;
     height: auto; }
-    .header__header {
-      background: transparent;
-      padding: 0;
-      position: absolute;
-      top: 20px; }
     .header__container {
       width: 90%; }
     .header__text {
@@ -1180,9 +1256,14 @@ a {
       margin: 0 auto; }
     .header__menu {
       position: absolute;
-      width: 90%;
-      top: 150%;
-      margin: 0 auto; }
+      left: 0;
+      right: 0;
+      width: 100%;
+      top: 99%;
+      background-color: white;
+      padding: 10px 0;
+      margin: 0 auto; 
+    border: none;}
     .header__title {
       margin: 100px auto 10px auto; }
     .header__content {
@@ -1193,18 +1274,18 @@ a {
       background-size: 100%;
       padding: 25% 0 0 0; }
       .header__content .content__header {
-        padding-left: 5%; }
+        padding-left: 5%;
+      color: #242424; }
     .header__options, .header__button, .header__best-choise {
       padding-left: 5%;
-      background: white; }
+      background: white;
+      color: #242424;
+    }
     .header__main {
-      padding-top: 135px;
+      padding-top: 150px;
       height: auto;
       background-size: cover;
       background-position: center; }
-    .header__logo {
-      background: url("../images/logo white.png") no-repeat;
-      background-size: contain; }
     .header__vector1 {
       background: transparent;
       flex-direction: column;
@@ -1223,14 +1304,12 @@ a {
       padding-left: 5%; }
     .header__contact-phone a {
       color: #01AE5F; }
-    .header__phone, .header__address {
-      color: white; }
     .header__options {
       width: 90%; }
-    .header__item .select-custom__selected {
-      color: white; }
-    .header__bg1 {
-      transform: scale(2); }
+      .header__option{
+        color: #242424;
+      }
+
     .header__bg {
       height: 100%; }
     .header__alpha {
@@ -1329,6 +1408,12 @@ a {
     font-size: 8px;
     line-height: 10px; } }
 @media screen and (max-width: 720px) {
+  #change-theme button{
+    font-size: 10px;
+  }
+  .feedback__checkbox{
+    font-size: 10px;
+  }
   .content__header {
     font-size: 18px;
     line-height: 22px; }
@@ -1373,9 +1458,6 @@ a {
   .header__bg2 {
     display: block;
     top: -150px; }
-  .header__menu {
-    width: 95%;
-    margin: 0 -10px; }
   .header__item {
     padding: 0 10px; }
     .header__item .select-custom__arrow {
@@ -1534,9 +1616,19 @@ a {
     .item-video__play {
       width: 50px;
       height: 50px;
-      background-size: 30%; } }
+      background-size: 30%; }
+    .feedback__checkbox .checkmark{
+      width: 15px;
+      height: 15px;
+      right: 95%;
+    } }
 @media screen and (max-width: 400px) {
   .footer__column {
     flex: 0 0 100%; } }
+
+  #map{
+    height: 500px;
+    width: 100%;
+  }
 
 /*# sourceMappingURL=main.css.map */

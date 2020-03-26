@@ -22,7 +22,25 @@ $(function(){
     $(document).on('click', (e) => {
         $('.select-custom__options').removeClass('select-custom__active');
     })
+
+  $('.header__logo').on('click', e => {
+      $('html, body').animate({
+        scrollTop: $(".header__main").offset().top
+      }, 700);
+  })
+
+  $('.feedback__input input[type=text]').on('keyup', e => {
+    let regex = /[\d]/gi;
+    e.currentTarget.value = e.currentTarget.value.replace(regex, '');
+  });
+
+  if(location.search.indexOf('dark') !== -1){
+    $('#change-theme2 a').attr('href', '/');
+  }else{
+    $('#change-theme2 a').attr('href', '?dark=true')
+  }
 });
+
 
 function setInputFilter(textbox, inputFilter) {
     ["input", "mousedown", "select", "contextmenu", "drop"].forEach(function(event) {
@@ -58,3 +76,15 @@ function setInputFilter(textbox, inputFilter) {
   setInputFilter(document.querySelector(".feedback__input input"), function(value) {
     return /^\d*\+?\d*$/.test(value); // Allow digits and '.' only, using a RegExp
   });
+
+
+(function () {
+  if (location.search.indexOf('dark') !== -1){
+    var styles = document.createElement('link');
+    styles.rel = 'stylesheet';
+    styles.type = 'text/css';
+    styles.media = 'screen';
+    styles.href = './css/dark.css';
+    document.getElementsByTagName('head')[0].appendChild(styles);
+  }
+})();

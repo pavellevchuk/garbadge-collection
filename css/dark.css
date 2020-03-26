@@ -1,0 +1,89 @@
+.header__header,
+header,
+section,
+body,
+.header__menu {
+    background-color: #242633;
+}
+
+.header__logo{
+    background: url(../images/logo\ white.png) no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+
+.header__alpha {
+      position: absolute;
+      width: 100%;
+      height: 99.7%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+      top: 0;
+      left: 0;
+  }
+.header__header div,
+.content__header,
+.content__subtitle,
+.item-service__title,
+.item-service__description,
+.item-card__title,
+.item-card__description,
+.item-number__header,
+.item-number__description,
+.table__name,
+.table__info,
+.table__address,
+.table__phone,
+.header__content .content__header
+{
+    color: white;
+}
+
+.item-number__number{
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.item-card {
+    background-color: #3C3E4B;
+}
+
+.footer{
+    background-image: url("../images/footerbg.png"),
+    linear-gradient(90deg, #3C3E4B 0%, #242633 100%);
+}
+
+
+@media screen and (max-width: 1000px){
+    .header__content {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background: none;
+        background-size: 100%;
+        padding: 25% 0 0 0;
+    }
+
+    .header__best-choise{
+        height: 40px;
+    }
+
+    .header__options,
+    .header__button,
+    .header__best-choise{
+        background: transparent;
+    }
+
+    .header__option,
+    .header__options,
+    .header__button,
+    .header__best-choise {
+        color: white;
+    }
+}
+
+@media screen and (max-width: 720px){
+    .header__bg2{
+        top:0;
+    }
+}

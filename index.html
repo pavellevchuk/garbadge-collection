@@ -9,23 +9,13 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__header">
+        <div class="header__header"  data-theme="light">
             <div class="header__container">
-                <div class="header__logo">
-                </div>
+                <a href="#" class="header__logo">
+                </a>
                 <nav class="header__menu">
-                    <div class="header__item">
-                        <div class="select-custom">
-                            <div class="select-custom__current">
-                                <span class="select-custom__selected">Вывоз мусора 8 кубов в Истре</span>
-                                <span class="select-custom__arrow"></span>
-                            </div>
-                            <div class="select-custom__options">
-                                <div class="select-custom__option"><a href="#">Вывоз мусора 8 кубов в Истре</a></div>
-                                <div class="select-custom__option"><a href="#">Вывоз мусора газелью в Истре</a></div>
-                                <div class="select-custom__option"><a href="#">Вывоз мусора контейнером в Истре</a></div>
-                            </div>
-                        </div>
+                    <div class="header__item1" id="change-theme1">
+                        <a href="#">Включить темную тему</a>
                     </div>
                     <div class="header__item">
                         <div class="select-custom">
@@ -52,6 +42,9 @@
                                 <div class="select-custom__option"><a href="#">Вывоз мусора контейнером в Истре</a></div>
                             </div>
                         </div>
+                    </div>
+                    <div class="header__item" id="change-theme2">
+                        <a href="?dark=true">Включить темную тему</a>
                     </div>
                 </nav>
                 <div class="header__contacts">
@@ -125,16 +118,6 @@
                     </div>
                     <div class="header__best-choise">
                         Лучший вариант - <span>Газель 8м3</span>
-                    </div>
-                    <div class="header__vector2">
-                        <div class="header__callus">
-                            <span>[!]</span> Наберите нас и мы подберём вам самую выгодную цену для полченного варианта техники <span>[!]</span>
-                        </div>
-                    </div>
-                    <div class="header__vector3">
-                        <div class="header__contact-phone">
-                            <a href="tel:+723423232">8-800-755-75-75</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -210,17 +193,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="address">
-        <div class="address__container">
-            <div class="address__header content__header">
-                Введите адрес, откуда нужно вывезти мусор и узнайте точную стоимость
-            </div>
-            <div class="address__subtitle content__subtitle">
-                Расчет стоимости по введеному адресу
-            </div>
-            <div class="address__map"></div>
         </div>
     </section>
     <section class="benefits">
@@ -322,9 +294,11 @@
                 Карта маршрутов по вывозу мусора из Истры до ближайших полигонов
             </div>
             <div class="route-map__subtitle content__subtitle">
-                Как видно из представленной карты из Истры для вывоза доступно [3] полигонов. (прочий текст...)
+                Как видно из представленной карты из Истры для вывоза доступно несколько полигнонов.
             </div>
-            <div class="route-map__map"></div>
+            <div class="route-map__map">
+                <div id="map"></div>
+            </div>
         </div>
     </section>
     <section class="feedback">
@@ -332,25 +306,27 @@
             Поможем определиться с типом техники и подберем самый выгодный вариант на вывоз мусора в Истре
         </div>
         <form action="#" class="feedback__form">
-            <div class="feedback__input">
-                <input type="text" placeholder="Ваш номер телефона">
+            <div class="feedback__form-block">
+                <div class="feedback__input">
+                    <input type="phone" placeholder="Ваш номер телефона">
+                </div>
+                <div class="feedback__input">
+                    <input type="email" placeholder="Ваш email">
+                </div>
+                <div class="feedback__input">
+                    <input type="text" placeholder="Ваше имя">
+                </div>
+            </div>
+            <div class="feedback__checkbox">
+                <input type="checkbox" id="call-me">
+                <label for="call-me">Перезвоните мне</label>
+                <span class="checkmark"></span>
             </div>
             <div class="feedback__submit action-button">
                 <a href="#">Отправить заявку</a>
             </div>
             <div class="feedback__phone">8-800-555-75-75</div>
         </form>
-    </section>
-    <section class="statistics">
-        <div class="statistics__container">
-            <div class="statistics__header content__header">
-                Статистика по вывозу мусора в Истре и окрестностях
-            </div>
-            <div class="statistics__subtitle content__subtitle">
-                Данные по вывозу мусора в Истре, которые докажут нашу эффективность
-            </div>
-            <div class="statistics__block"></div>
-        </div>
     </section>
     <section class="economy">
         <div class="economy__container">
@@ -610,5 +586,14 @@
     </footer>
     <script src="./js/jquery.js"></script>
     <script src="./js/main.js"></script>
+    <script>
+        function initMap() {
+        var uluru = {lat: -25.344, lng: 131.036};
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 4, center: uluru});
+        var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKRohbuI5HMsFMjph5TIJlCFcI0cLG5xA&callback=initMap"></script>
 </body>
 </html>
