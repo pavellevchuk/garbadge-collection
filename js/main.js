@@ -34,8 +34,8 @@ $(function(){
     e.currentTarget.value = e.currentTarget.value.replace(regex, '');
   });
 
-  if(location.search.indexOf('dark') !== -1){
-    $('#change-theme2 a').attr('href', '/');
+  if(location.search.indexOf('dark=true') !== -1){
+    $('#change-theme2 a').attr('href', '?dark=false');
   }else{
     $('#change-theme2 a').attr('href', '?dark=true')
   }
@@ -79,7 +79,7 @@ function setInputFilter(textbox, inputFilter) {
 
 
 (function () {
-  if (location.search.indexOf('dark') !== -1){
+  if (location.search.indexOf('dark=true') !== -1){
     var styles = document.createElement('link');
     styles.rel = 'stylesheet';
     styles.type = 'text/css';
